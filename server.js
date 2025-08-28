@@ -26,6 +26,7 @@
 require('dotenv').config();
 const express = require('express');
 const paymentRoutes = require('./src/api/routes/paymentRoute');
+const productRoutes = require('./src/api/routes/productRoute');
 const connectDB = require('./src/config/db');
 
 const app = express();
@@ -33,6 +34,7 @@ app.use(express.json());
 
 // Routes
 app.use('/api', paymentRoutes);
+app.use('/api/products', productRoutes);
 
 // Only connect to DB & start server if not testing
 if (process.env.NODE_ENV !== 'test') {

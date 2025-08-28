@@ -37,8 +37,8 @@ exports.generateKHQR = async (req, res) => {
 
     const individualInfo = new IndividualInfo(
       process.env.BAKONG_ACCOUNT_USERNAME,
-      "Chanvuthy Leap",
-      "PHNOM PENH",
+      "Chanvuthy Leap", // Update to your username
+      "PHNOM PENH",  // Update to your city
       optionalData
     );
 

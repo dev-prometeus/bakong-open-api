@@ -4,9 +4,14 @@ const paymentRoutes = require('./src/api/routes/paymentRoute');
 const productRoutes = require('./src/api/routes/productRoute');
 const orderRoutes = require('./src/api/routes/orderRoute');
 const connectDB = require('./src/config/db');
+const cors = require('cors');
 
 const app = express();
 app.use(express.json());
+app.use(cors({
+  origin: 'http://localhost:5173',
+}));
+
 
 // Routes
 app.use('/api', paymentRoutes);

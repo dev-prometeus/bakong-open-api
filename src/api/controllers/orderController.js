@@ -12,7 +12,7 @@ const BAKONG_ACCESS_TOKEN = process.env.BAKONG_ACCESS_TOKEN;
 const generateOrderID = async () => {
   const latestOrder = await Order.findOne().sort({ createdAt: -1 });
   let newOrderNumber = 1;
-  if (latestOrder && latestOrder.orderId) {
+  if (latestOrder && latestOrder.orderId) { 
     const lastNumber = parseInt(latestOrder.orderId.split('_')[1], 10);
     newOrderNumber = lastNumber + 1;
   }
